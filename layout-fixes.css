@@ -106,3 +106,11 @@
 #app-mount .children_ybUK7Z::after {
   display: none !important;
 }
+
+/* Friends / top bar section: let the panel behind it show through */
+#app-mount section.container_ybUK7Z,
+#app-mount section.container_ybUK7Z.themed_ybUK7Z,
+#app-mount .upperContainer_ybUK7Z,
+#app-mount .toolbar_ybUK7Z {
+  background: transparent !important;
+}
