@@ -1,0 +1,108 @@
+/* Layout fixes (from quickcss-v2.css, 2026-11-06). Discord renamed .bg__960e4 to .bg_Fd0FEH. One darkening overlay per panel. */
+
+#app-mount .bg_Fd0FEH {
+  position: absolute;
+  top: -22px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--background-image);
+  background-position: var(--background-image-position, center);
+  background-size: var(--background-image-size, cover);
+}
+#app-mount .bg_Fd0FEH::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--window-padding) + 22px);
+  right: var(--window-padding);
+  bottom: var(--window-padding);
+  left: var(--window-padding);
+  border-radius: var(--window-roundness);
+  -webkit-backdrop-filter: blur(var(--background-image-blur));
+  backdrop-filter: blur(var(--background-image-blur));
+  box-shadow: inset 0 0 0 100vmax var(--tint);
+  display: var(--background-blur-visiblity, block);
+}
+
+/* Wrappers Discord paints opaque */
+#app-mount .tabBody_zrUwGA,
+#app-mount .sidebar_pog62O,
+#app-mount .privateChannels_u88IQl,
+#app-mount .scroller_Bce46W,
+#app-mount .chat_z_gUBg,
+#app-mount .messagesWrapper_8AE1Qq,
+#app-mount .title_z_gUBg,
+#app-mount .scrollableContainer_2x8-Qn,
+#app-mount .members_86es0b,
+#app-mount .container_H5ozaj,
+#app-mount .title_3zSH5d {
+  background: transparent !important;
+}
+
+/* Server rail: same darkness as the chat, with room under the title bar */
+#app-mount .guilds_pog62O {
+  background: rgb(0, 0, 0, var(--middle-brightness)) !important;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+#app-mount .sidebarList_pog62O,
+#app-mount .panels_pog62O {
+  background: rgb(0, 0, 0, var(--left-brightness)) !important;
+}
+#app-mount .chatContent_z_gUBg,
+#app-mount .subtitleContainer_z_gUBg,
+#app-mount .container_zrUwGA {
+  background: rgb(0, 0, 0, var(--middle-brightness)) !important;
+}
+#app-mount .membersWrap_86es0b {
+  background: rgb(0, 0, 0, var(--right-brightness)) !important;
+}
+#app-mount .bar_3zSH5d {
+  background: rgb(0, 0, 0, var(--middle-brightness)) !important;
+}
+
+/* Message header (name + timestamp): the mapper gave it the old audit-log header background */
+#app-mount h3.header_2i8Bfm {
+  background: transparent !important;
+}
+
+/* Context menu: no separate image overlay (it never lined up with the window background).
+   Plain translucent dark glass over whatever is behind it; raise the 0.55 if text is hard to read. */
+#app-mount [role=menu]::before {
+  display: none !important;
+}
+#app-mount [role=menu] {
+  background: rgb(12, 16, 38, 0.55) !important;
+  -webkit-backdrop-filter: blur(var(--background-image-blur, 12px));
+  backdrop-filter: blur(var(--background-image-blur, 12px));
+}
+#app-mount [role=menu] .scroller_M3qk4j,
+#app-mount [role=menu] .wrapper_Qi4I4L {
+  background: transparent !important;
+}
+
+/* Context menu hover/focus: a faint lift instead of Discord's solid highlight */
+#app-mount [role=menu] [role=menuitem]:hover,
+#app-mount [role=menu] [role=menuitem][class*="focused_"],
+#app-mount [role=menu] [role=menuitem]:focus-visible {
+  background: rgb(255, 255, 255, 0.07) !important;
+  color: #fff !important;
+}
+
+/* Sidebar top-left: Discord rounds this corner, which lets the bright background show through as a small patch */
+#app-mount .sidebar_pog62O,
+#app-mount .sidebarList_pog62O,
+#app-mount .privateChannels_u88IQl {
+  border-top-left-radius: 0 !important;
+}
+
+/* Fade gradient above the message box: it fights the frosted panels */
+#app-mount .chatGradient_8AE1Qq,
+#app-mount .chatGradientBase_8AE1Qq {
+  display: none !important;
+}
+
+/* Fade gradient at the edge of the toolbar icon row */
+#app-mount .children_ybUK7Z::after {
+  display: none !important;
+}

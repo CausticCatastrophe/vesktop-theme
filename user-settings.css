@@ -1,0 +1,131 @@
+:root {
+  /* Background image variables */
+  --background-image: url('data:image/jpeg;base64,__BG__');
+  --background-image-blur: 5px;
+  --background-image-size: cover;
+  --background-image-position: center;
+
+  /* Popout and modal variables */
+  --popout-modal-image: var(--background-image);
+  --popout-modal-blur: 5px;
+  --popout-modal-size: cover;
+  --popout-modal-position: center;
+
+  /* Darkness per panel, 0 is clear and 1 is black */
+  --serverlist-brightness: 0.2;
+  --left-brightness: 0.8;
+  --middle-brightness: 0.6;
+  --right-brightness: 0.4;
+  --popout-modal-brightness: 0.4;
+
+  /* Gradient variables */
+  --gradient-primary: 95, 60, 200;
+  --gradient-secondary: 63,81,181;
+  --gradient-direction: 320deg;
+
+  /* Tint variables */
+  --tint-colour: 95, 60, 200;
+  --tint-brightness: 0.2;
+
+  /* Other variables */
+  --window-padding: 0px;
+  --window-roundness: 10px;
+  --scrollbar-colour: rgba(255, 255, 255, 0.396);
+  --link-colour: #00b0f4;
+  .theme-dark, .theme-amoled {
+    --channels-default: #dddddda4;
+    --interactive-muted: #dddddd53;
+  }
+
+  --font: 'Karla';
+
+  /* Do not touch */
+  --update-notice-1: none;
+
+  /* Hide Discord Discover button via list ID */
+  div[data-list-item-id="guildsnav___guild-discover-button"] {
+    display: none !important;
+  }
+
+  /* Hide any back/forward button classes that contain backForwardButtons */
+  [class*="backForwardButtons"] {
+      display: none !important;
+  }
+
+  /* Hide links whose href ends with /store or /shop */
+  a[href$="/store"],
+  a[href$="/shop"] {
+      display: none !important;
+  }
+
+  div[aria-hidden="false"][class*="wrapper__0d616"] {
+    display: none !important;
+  }
+
+  /* Hide private quest list items */
+  a[data-list-item-id^="private-channels-uid_"][data-list-item-id*="quests"] {
+      display: none !important;
+  }
+
+  /* Hide any trailing checkpoint element with a label */
+  .trailing div[aria-label="Checkpoint"],
+  [class*="trailing"] div[aria-label="Checkpoint"] {
+      display: none !important;
+  }
+
+  /* Remove live/stream badge slot entirely */
+  [class*="upperBadge"] {
+    display: none !important;
+  }
+
+  /* Hide specific activity status */
+  [aria-label="Last Meadow Online"] {
+    display: none !important;
+  }
+
+  /* Discord Mute Button Restyle: kill red glow on muted mic and chevron */
+  [class*="panels"] [class*="redGlow"] {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--interactive-normal) !important;
+    --icon-voice-muted: var(--interactive-normal) !important;
+  }
+
+  /* Remap the muted icon color to match normal interactive color */
+  [class*="panels"] [aria-label="Mute"][aria-checked="true"] {
+    --icon-voice-muted: var(--interactive-normal) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  /* Hover state: subtle dark tint, not red */
+  [class*="panels"] [aria-label="Mute"][aria-checked="true"]:hover,
+  [class*="panels"] [class*="redGlow"]:hover {
+    background: var(--background-modifier-hover) !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide guild list scrollbar, keep it scrollable */
+  div[role="tree"][data-list-id="guildsnav"] [class*="scroller_"] {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scrollbar-gutter: auto !important;
+  }
+
+  div[role="tree"][data-list-id="guildsnav"] [class*="scroller_"]::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Hide the message-bar bookmark button */
+  [class*="bookmarkBtn"] {
+    display: none !important;
+  }
+
+  /* Hide context menu items. The list below is what survived the reset. */
+  #message-bookmark,
+  #message-reminder,
+  #message-tts {
+    display: none !important;
+  }
+}
