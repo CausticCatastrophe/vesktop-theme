@@ -114,3 +114,20 @@
 #app-mount .toolbar_ybUK7Z {
   background: transparent !important;
 }
+
+/* Hide Quests sidebar row (top-level, not nested) */
+#app-mount li:has(a[data-list-item-id$="___quests"]),
+#app-mount [class*="wrapper_hjotnx"]:has(a[data-list-item-id$="___quests"]),
+#app-mount a[data-list-item-id$="___quests"] {
+  display: none !important;
+}
+
+/* Blank the Quests page (/quest-home): hide header, tabs, orbs and tiles */
+#app-mount [class*="container_ZTJWQo"] > * {
+  display: none !important;
+}
+
+/* Quests page: same darkness as the DM/chat panel */
+#app-mount [class*="container_ZTJWQo"] {
+  background: rgb(0, 0, 0, var(--middle-brightness)) !important;
+}

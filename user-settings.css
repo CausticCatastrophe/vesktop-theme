@@ -63,7 +63,9 @@
   }
 
   /* Hide private quest list items */
-  a[data-list-item-id^="private-channels-uid_"][data-list-item-id*="quests"] {
+  a[data-list-item-id^="private-channels-uid_"][data-list-item-id*="quests"],
+  li:has(> div > a[data-list-item-id$="___quests"]),
+  div[class*="wrapper_hjotnx"]:has(a[data-list-item-id$="___quests"]) {
       display: none !important;
   }
 
