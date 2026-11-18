@@ -131,3 +131,9 @@
 #app-mount [class*="container_ZTJWQo"] {
   background: rgb(0, 0, 0, var(--middle-brightness)) !important;
 }
+
+/* Do not clip submenus */
+#app-mount [role=menu],
+#app-mount .subMenuContext-2n_9YM .scrollerWrap-2lJEkd {
+  overflow: visible !important;
+}

@@ -1,6 +1,6 @@
 # Handoff: Vesktop Frosted Glass theme (2026-11-06)
 
-Resume by reading this file, then `~/claude-os/runbooks/2026-11-06-vesktop-frosted-glass-theme.md`.
+Resume by reading this file, then `~/Projects/claude-config/runbooks/2026-11-06-vesktop-frosted-glass-theme.md`.
 
 ## State
 - Theme file rebuilt and installed at `~/.config/vesktop/themes/FrostedGlass.theme.css`. NOT yet enabled or viewed. Enabled-themes list was wiped by a Vesktop reset at 11:16.
@@ -33,3 +33,9 @@ Resume by reading this file, then `~/claude-os/runbooks/2026-11-06-vesktop-frost
 - Do not store the only copy of anything in `~/.config/vesktop`.
 - User wants the original theme look. Avoid stacking overlays on nested panels.
 - Nothing is committed. Everything here is uncommitted.
+
+## 2026-11-18 fixes
+- Submenus were clipped by overflow hidden on [role=menu].
+  layout-fixes.css now ends with an overflow: visible override.
+  Keep it on remap.
+- Stale Online Themes URL in settings.json removed.
